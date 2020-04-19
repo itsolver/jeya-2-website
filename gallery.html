@@ -1,7 +1,8 @@
 ---
 title: Gallery
 description: Before and after
-image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
+image: /images/stylish-living-space.jpg
+bottom_image: /images/property-styling.jpg
 photos:
 - image: /uploads/0-living-room-before.jpg
   caption: Living room - before
@@ -25,39 +26,41 @@ photos:
 			</h1>
 			<p class="subtext editable">
 				Before and After.
-			</p>
+      </p>
+      <div class="cta button alt editable"><a href="tel:+61451534315">Call now</a></div>
 		</div>
 	</div>
 </section>
 
 <div class="content">
-<ul class="gallery">
-	{% for photo in page.photos %}
-		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}')"><a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a></li>
-	{% endfor %}
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-	<li class="spacer"></li>
-</ul>
+    <ul class="gallery">
+        {% for photo in page.photos %}
+            <li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}')"><a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a></li>
+        {% endfor %}
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+        <li class="spacer"></li>
+    </ul>
 
-<div class="overlay">
-	<a class="close">&#10005;</a>
-	<a class="prev">&lsaquo;</a>
-	<a class="next">&rsaquo;</a>
-	<p class="caption"></p>
-	<img>
+    <div class="overlay">
+        <a class="close">&#10005;</a>
+        <a class="prev">&lsaquo;</a>
+        <a class="next">&rsaquo;</a>
+        <p class="caption"></p>
+        <img>
+    </div>
 </div>
 
-</div>
+{% include contact-form.html %}
 
 <script>
 if (window.location.host === "app.cloudcannon.com") {
