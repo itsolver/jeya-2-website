@@ -1,0 +1,73 @@
+---
+title: Gallery
+description: Before and after
+image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
+photos:
+- image: /uploads/0-living-room-before.jpg
+  caption: Living room - before
+- image: /uploads/0-living-room-after.jpg
+  caption: Living room - after
+- image: /uploads/1-dining-room-before.jpg
+  caption: Dining room - before
+- image: /uploads/1-dining-room-after.jpg
+  caption: Dining room - after
+- image: /uploads/2-bedroom-before.jpg
+  caption: Bedroom - before
+- image: /uploads/2-bedroom-after.jpg
+  caption: Bedroom - after
+
+---
+<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<h1 class="editable">
+				Gallery
+			</h1>
+			<p class="subtext editable">
+				Before and After.
+			</p>
+		</div>
+	</div>
+</section>
+
+<div class="content">
+<ul class="gallery">
+	{% for photo in page.photos %}
+		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}')"><a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a></li>
+	{% endfor %}
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+	<li class="spacer"></li>
+</ul>
+
+<div class="overlay">
+	<a class="close">&#10005;</a>
+	<a class="prev">&lsaquo;</a>
+	<a class="next">&rsaquo;</a>
+	<p class="caption"></p>
+	<img>
+</div>
+
+</div>
+
+<script>
+if (window.location.host === "app.cloudcannon.com") {
+$('.gallery').find("a").click(function(e) {
+e.preventDefault();
+return false;
+});
+} else {
+var script = document.createElement("script");
+script.src = "{{ site.baseurl }}/js/lightbox.js";
+document.body.appendChild(script);
+}
+</script>
