@@ -40,50 +40,6 @@ bottom_image: /images/property-styling.jpg
 				<h2 class="editable">Consultation</h2>
 				<p class="editable">Consultation is the heart of my services. During this process we will discover the way to create an action plan to style your property for sale, for interior decorating or professional organising.</p>
 				<p class="editable">If you believe that you just need professional advice on how to present your property, I can offer 2 hours of consultation for $200.</p> 
-				<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-on-demand-quick-support-request"
-  role="link"
->
-  Checkout
-</button>
-
-<div id="error-message"></div>
-
-<script>
-(function() {
-  var stripe = Stripe('pk_live_VJ3u45huMiamA3vibzwz4zCU');
-
-  var checkoutButton = document.getElementById('checkout-button-on-demand-quick-support-request');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{sku: 'on-demand-quick-support-request', quantity: 1}],
-
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://www.itsolver.net/success',
-      cancelUrl: 'https://www.itsolver.net/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-})();
-</script>
 				<p class="editable">Please keep in mind that it is your responsibility to take notes.</p>
 				<p class="editable">If you want me to check your staging work following my advice, I can re-visit your property for $150 for two hours to ensure everything is presentable to open homes standards.</p>
 
