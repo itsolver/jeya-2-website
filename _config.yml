@@ -10,15 +10,16 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Property styling.
+description: Property styling, home staging and organising.
 author:
-  name:
-  email:
+  name: Jeya Spencer
+  email: styling@jeyaspencer.com
   twitter: # twitter username without the @ symbol
 social:
-  name: Frisco Template
+  name: Jeya Spencer Styling
   links:
-    - https://github.com/CloudCannon/frisco-jekyll-template
+    - https://facebook.com/jeyaspencerstyling.com.au
+    - https://instagram.com/jeyaspencer
 
 # -----
 # Build
@@ -40,11 +41,6 @@ exclude:
   - README.md
   - LICENCE
 
-collections:
-  staff_members:
-    _hide_content: true
-    _icon: account_circle
-
 paginate: 10
 paginate_path: "/blog/:num/"
 
@@ -52,16 +48,6 @@ jekyll-archives:
   enabled: ['categories']
 
 defaults:
-  -
-    scope:
-      path: ""
-      type: "staff_members"
-    values:
-      _options:
-        image_path:
-          width: 440
-          height: 440
-          uploads_dir: "/images/staff_members"
   -
     scope:
       path: ""
